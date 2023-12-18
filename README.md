@@ -20,29 +20,29 @@ This project presents a Virus Spread Simulation, leveraging advanced programming
 This Virus Spread Simulation incorporates a blend of mathematical and computational techniques to accurately model the dynamics of a viral outbreak in a structured society. Key aspects of the simulation's logic and modeling are as follows:
 
 
-###1. Infection Spread Mechanism
+### 1. Infection Spread Mechanism
 - When a person (p) in the population is infected and alive, the simulation iterates through their contacts (p.rcontact + p.pcontact).
 - For each contact (j), there's a chance they will get infected. This is determined by p.spreadrate (the infected person's likelihood to spread the virus) and j.poss (the contact's susceptibility to getting infected).
 - The possibility function is a key part of this process. It converts these probabilities into a yes/no outcome using randint. If a random number from 0 to 999 is less than or equal to probability * 1000, the event (like infection) occurs.
   
-##2. Mortality and Recovery Calculation
+### 2. Mortality and Recovery Calculation
 - Each person in the simulation has a mrate, which is their mortality rate.
 - After a person has been infected for a certain number of days (15 in your simulation), the possibility function checks against their mortality rate to determine if they die or recover.
 - If they survive (random chance determined by mrate), they are marked as recovered and no longer infected. If not, they are marked as not alive.
   
-###3. Tracking the Spread and Outcomes
+### 3. Tracking the Spread and Outcomes
 - The simulation keeps track of various statistics like newcases, newdeaths, newrecovery, and accumulates them in lists like casesl, deathsl, recoverl, etc.
 - These statistics are updated in each iteration (each day in the simulation) based on the outcomes of the infection spread and recovery/mortality checks.
   
-###4. Random Social Connections
+### 4. Random Social Connections
 - The function randomConnections creates random interactions (social connections) between individuals, based on their types ('w', 's', 'o').
 - This randomness simulates real-life encounters outside of a person's permanent social circle.
 
-####Formulaic Explanation
+#### Formulaic Explanation
 - Infection Chance: if randint(0, 999) <= spreadrate * 1000 then infect
 - Mortality Check: if randint(0, 999) <= mrate * 1000 then die else recover
   
-####Key Points
+#### Key Points
 - The simulation does not use deterministic formulas but probabilistic models. This means the outcomes (like who gets infected, who dies, and who recovers) are based on chance, reflecting the uncertainty and randomness found in real-life disease spread.
 - The parameters like spreadrate, mrate, and the number of days before recovery/death checks are crucial. They should be set based on realistic data or estimates for the simulation to be meaningful.
 - This probabilistic approach allows the simulation to mimic the unpredictability and complexity of real-world viral spread, making it a valuable tool for understanding and analyzing potential scenarios in public health studies.
