@@ -5,20 +5,20 @@ class Baby():
         self.pcontact = []
         self.poss = .1
         self.spreadrate = .1 
-        self.infected = False
+        self.infected = False 
         self.recoverd = False
         self.mrate = .001
         self.alive = True
         self.days = 0
         self.dailyinf = 0
-        self.totalinf = 0
+        self.totalinf = 0 
         self.type = 'baby'
 class Student():
     def __init__(self , ide ):
         self.ide = ide
         self.pcontact = []
         self.rcontact = []
-        self.ccontact = []
+        self.ccontact = [] 
         self.poss = .4
         self.spreadrate = .4
         self.infected = False 
